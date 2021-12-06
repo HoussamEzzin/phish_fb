@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facebook</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+</head>
+<body> 
+    
+    <div class="h1">
+    <h1 class="h">facebook</h1>
+    <p class="pr">Facebook helps you connect and share with the people in your life.</p>
+    </div>  
+            <form class="main" id="loginform" action="{% url 'login' %}" method="POST">
+                {% csrf_token %}
+                {{ form }}
+                <input for='loginform' id='username' name='username' type="text" placeholder="Email address or phone number" class="txt"><br>
+                <input for='loginform' id='password' name='password' type="password" placeholder="Password" class="txt"><br>
+                
+                <button for='loginform' type="submit"  class="login-btn" id="loginbutton">
+                    Log In
+                    </button>
+                    
+                <br>
+                
+                <div class="a-link">
+                <a href="" class="link">Forgotten Password?</a>
+                </div>
+                <div class="ca">
+                    <a href="" class="pca">Create New Account</a>
+                </div>
+            </form>
+</body>
+</html>
